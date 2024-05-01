@@ -17,7 +17,18 @@
             align-items: center;
             text-align: center;
             flex-direction: column;
-            height: 100vh;
+            height: 500;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #6a4c5c;
+            color: white;
+            font-family: 'Comfortaa', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
         }
         
         .input-container {
@@ -81,6 +92,49 @@
             color: #843b62; 
             margin-top: 1px; 
         }
+        #image-container {
+            display: none;
+        }
+        .do-not-press-button {
+            font-family: 'Comfortaa', sans-serif;
+            background-color: #f46b6b; 
+            color: #fff;
+            padding: 10px; 
+            border: none;
+            border-radius: 50%; 
+            cursor: pointer;
+            font-size: 14px; 
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none; 
+            width: 100px; 
+            height: 100px;
+            line-height: 1.5; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .do-not-press-button:hover,
+        .button-pressed {
+            background-color: #bd2828; 
+        }
+
+        .dark-color {
+            background-color: #bd2828 !important; 
+        }
+
+        #error-message {
+            font-weight: bold;
+            display: none; 
+        }
+
+        .buttons-container {
+            max-width: 400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
 
     </style>
 </head>
@@ -99,8 +153,39 @@
     </div>
     <div id="outputContainer"></div>
 
+
     <img src="CC.png" alt="Placeholder Image" id="bottomImage">
     <p2><a href="https://en.wikipedia.org/wiki/Cosmic_Calendar" target="_blank">Source: Wikipedia</a></p2>
+    <br>
+    <div class="quiz-container">
+        <div class="start-page" id="start-page">
+            <h>Challenge!</h>
+            <!--img src="../images/BE3.PNG" width="400" alt="Egg Image"-->
+            <div class="buttons-container">
+                <button id="button1" class="do-not-press-button">Sun</button>
+                <button id="button2" class="do-not-press-button">Fish</button>
+                <button id="button3" class="do-not-press-button" style="font-size: 12px">First Life</button>
+                <button id="button4" class="do-not-press-button">Insects</button>
+                <button id="button5" class="do-not-press-button">Big Bang</button>
+                <button id="button6" class="do-not-press-button">Dinosaurs</button>
+                <button id="button7" class="do-not-press-button">Humans</button>
+                <button id="button8" class="do-not-press-button">Milky Way</button>
+                <button id="button9" class="do-not-press-button">Birds</button>
+            </div>
+        </div>
+        <div id="image-container">
+            <!--img src="../images/BE3.PNG" width="400" alt="Egg Image"-->
+            <h1>Excellent! All correct!</h1>
+        </div>
+        <p id="error-message"></p>
+        <br>
+        <div>
+
+
+
+    <footer>
+        <a href="https://www.instagram.com/direct/t/104235214312636/" target="_blank" style="font-size: 10px; text-decoration: none;">&copy; 2024 I-see Warisa Jaidee</a>
+    </footer>
     <script>
         function calculateCosmicYear() {
             const birthMonth = parseInt(document.getElementById("birthMonth").value);
@@ -122,6 +207,7 @@
             const T_Gya = (indays / 365) * 13.797;
             const T_Gya2 = T_Gya.toFixed(2)
             let timeEvent = "";
+            let imageUrl = "";
 
 
 
@@ -129,6 +215,7 @@
         timeEvent = "- Big Bang, the beginning of the Universe on 1 Jan, 14 minutes after midnight";
     } if (T_Gya2 <= 13.12 && T_Gya2 > 12.85) {
         timeEvent = "- Oldest known Gamma Ray Burst (19 Jan)";
+        imageUrl = "1.png"
     } if (T_Gya2 <= 12.85 && T_Gya2 > 11) {
         timeEvent = "- First galaxy formed (26 Jan)";
     } if (T_Gya2 <= 11 && T_Gya2 > 8.81) {
@@ -183,7 +270,54 @@
 
             const outputContainer = document.getElementById("outputContainer");
             outputContainer.textContent = `${T_Gya.toFixed(2)} billion years ago ${timeEvent}`;
+            const bottomImage = document.getElementById("bottomImage");
+            bottomImage.src = imageUrl;
         }
+    
+        const correctSequence = ["button5", "button8", "button1", "button3", "button2", "button4", "button6", "button9", "button7"];
+
+
+    const buttons = document.querySelectorAll("button");
+    const errorMessage = document.getElementById("error-message");
+
+
+    let userSequence = [];
+
+
+    buttons.forEach(button => {
+    button.addEventListener("click", function() {
+
+        if (userSequence.includes(button.id) || document.getElementById("image-container").style.display === "block") {
+            return;
+        }
+        
+        userSequence.push(button.id);
+        if (userSequence.length === correctSequence.length) {
+            if (arraysMatch(userSequence, correctSequence)) {
+                document.getElementById("image-container").style.display = "block";
+                errorMessage.textContent = "";
+            } else {
+
+                errorMessage.textContent = "Tsk Tsk Tsk...Try again";
+                errorMessage.style.display = "block"; 
+            }
+        }
+
+
+        button.classList.add("button-pressed");
+
+        button.disabled = true;
+    });
+});
+
+
+    function arraysMatch(arr1, arr2) {
+    if (arr1.length !== arr2.length) return false;
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) return false;
+    }
+    return true;
+}
     
     </script>
 </body>
