@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-    <title>Dark Energy Scenarios</title>
+    <title>Cosmic Calendar</title>
     <style>
         body {
             font-family: 'Comfortaa', sans-serif;
@@ -153,11 +153,33 @@
         timeEvent = "- First multicellular life (5 Dec)";
     } if (T_Gya2 <= 0.94 && T_Gya2 > 0.55) {
         timeEvent = "- Simple animals (7 Dec)";
-    } if (T_Gya2 <= 0.55 && T_Gya2 > 0.5) {
+    } if (T_Gya2 <= 0.55 && T_Gya2 > 0.53) {
         timeEvent = "- Arthropods, ancestors of insects, arachnids (14 Dec)";
+    } if (T_Gya2 <= 0.53 && T_Gya2 > 0.45) {
+        timeEvent = "- Fish and Proto-amphibians (17 Dec)";
+    } if (T_Gya2 <= 0.42 && T_Gya2 > 0.38) {
+        timeEvent = "- Land plants; Ordovician–Silurian extinction events (20 Dec)";
+    } if (T_Gya2 <= 0.38 && T_Gya2 > 0.34) {
+        timeEvent = "- Insects and seeds (21 Dec)";
+    } if (T_Gya2 <= 0.34 && T_Gya2 > 0.3) {
+        timeEvent = "- Amphibians; Late Devonian extinction (22 Dec)";
+    } if (T_Gya2 <= 0.3 && T_Gya2 > 0.26) {
+        timeEvent = "- Reptiles (23 Dec)";
+    } if (T_Gya2 <= 0.26 && T_Gya2 > 0.23) {
+        timeEvent = "- Permian–Triassic extinction event (24 Dec)";
+    } if (T_Gya2 <= 0.23 && T_Gya2 > 0.2) {
+        timeEvent = "- Dinosaurs (25 Dec)";
+    } if (T_Gya2 <= 0.2 && T_Gya2 > 0.15) {
+        timeEvent = "- Mammals; Triassic–Jurassic extinction event (26 Dec)";
+    } if (T_Gya2 <= 0.15 && T_Gya2 > 0.13) {
+        timeEvent = "- Birds (avian dinosaurs) (27 Dec)";
+    } if (T_Gya2 <= 0.13 && T_Gya2 > 0.065) {
+        timeEvent = "- Flowers (28 Dec)";
+    } if (T_Gya2 <= 0.065 && T_Gya2 > 0.04) {
+        timeEvent = "- Cretaceous–Paleogene extinction event, non-avian dinosaurs: gone (30 Dec)";
+    } if (T_Gya2 <= 0.04 && T_Gya2 >= 0) {
+        timeEvent = "- Primates > Apes > Hominids > Primitive Humans > Stone Tools > FIRE > Modern Humans > Sculture, Agriculture > End of Ice Age >>>> a lot more that heppens and then... TODAY! (31 Dec)";
     }
-
-
 
             const outputContainer = document.getElementById("outputContainer");
             outputContainer.textContent = `${T_Gya.toFixed(2)} billion years ago ${timeEvent}`;
