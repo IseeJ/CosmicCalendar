@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <title>Dark Energy Scenarios</title>
+    <style>
+        body {
+            font-family: 'Comfortaa', sans-serif;
+            background-color: #ffb997;
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #843b62;
+        }
+        
+        .input-container label {
+            margin-bottom: 10px;
+        }
+        
+        .input-container input {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 150px;
+            text-align: center;
+            background-color: #fff;
+            color: #843b62;
+            font-family: 'Comfortaa', sans-serif;
+            font-size: 16px;
+        }
+        
+        .input-container button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #843b62;
+            color: white;
+            font-family: 'Comfortaa', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .input-container button:hover {
+            background-color: #ca95b1; 
+        }
+
+        #outputContainer {
+            color: #843b62;
+            font-size: 18px;
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        #bottomImage {
+            width: 400px; 
+            margin-top: 10px; 
+            margin-bottom:10px;
+        }
+        h1 {
+            font-size: 25px; 
+            color: #843b62; 
+            margin-top: 50px; 
+        }        
+        a {
+            font-size: 14px; 
+            color: #843b62; 
+            margin-top: 1px; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <h1>Your birthday on the Cosmic Calendar</h1>
+        <a>Enter your birthday to find out which cosmic event is closed by!</a>
+        <br>
+        <label for="birthMonth">Month:</label>
+        <input type="number" id="birthMonth" min="1" max="12" value="1">
+
+        <label for="birthDay">Date:</label>
+        <input type="number" id="birthDay" min="1" max="31" value="1">
+        
+        <button onclick="calculateCosmicYear()">Calculate</button>
+    </div>
+    <div id="outputContainer"></div>
+
+    <img src="CC.png" alt="Placeholder Image" id="bottomImage">
+    <p2><a href="https://en.wikipedia.org/wiki/Cosmic_Calendar" target="_blank">Source: Wikipedia</a></p2>
+    <script>
+        function calculateCosmicYear() {
+            const birthMonth = parseInt(document.getElementById("birthMonth").value);
+            const birthDay = parseInt(document.getElementById("birthDay").value);
+            //const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            let inputDate = new Date(2024, birthMonth  - 1, birthDay); 
+            let december31 = new Date(2024, 11, 31); 
+            let differenceInMs = december31 - inputDate;
+            let indays = Math.ceil(differenceInMs / (1000 * 60 * 60 * 24));
+
+            //let indays = 0;
+            //for (let month = birthMonth - 1; month < 12; month++) {
+            //    if (month === birthMonth - 1) {
+            //        indays += (daysInMonth[month] - birthDay + 1); 
+            //    } else {
+            //        indays += daysInMonth[month]; 
+            //    }
+            //}
+            const T_Gya = (indays / 365) * 13.797;
+            const T_Gya2 = T_Gya.toFixed(2)
+            let timeEvent = "";
+
+
+
+    if (T_Gya2 <= 13.8 && T_Gya2 > 13.12) {
+        timeEvent = "- Big Bang, the beginning of the Universe on 1 Jan, 14 minutes after midnight";
+    } if (T_Gya2 <= 13.12 && T_Gya2 > 12.85) {
+        timeEvent = "- Oldest known Gamma Ray Burst (19 Jan)";
+    } if (T_Gya2 <= 12.85 && T_Gya2 > 11) {
+        timeEvent = "- First galaxy formed (26 Jan)";
+    } if (T_Gya2 <= 11 && T_Gya2 > 8.81) {
+        timeEvent = "- Milky Way Galaxy formed (16 Mar)";
+    } if (T_Gya2 <= 8.81 && T_Gya2 > 4.57) {
+        timeEvent = "- Milky Way Galaxy disk formed (13 May)";
+    } if (T_Gya2 <= 4.57 && T_Gya2 > 4.42) {
+        timeEvent = "- Solar system formed (2 Sep)";
+    } if (T_Gya2 <= 4.42 && T_Gya2 > 4.12) {
+        timeEvent = "- Oldest rocks known on Earth (6 Sep)";
+    } if (T_Gya2 <= 4.12 && T_Gya2 > 3.86) {
+        timeEvent = "- First known remains of biotic life (14 Sep)";
+    } if (T_Gya2 <= 3.86 && T_Gya2 > 3.52) {
+        timeEvent = "- First Life, Prokaryotes (21 Sep)";
+    } if (T_Gya2 <= 3.52 && T_Gya2 > 2.42) {
+        timeEvent = "- Photosynthesis (30 Sep)";
+    } if (T_Gya2 <= 2.42 && T_Gya2 > 2) {
+        timeEvent = "- Oxygenation of atmosphere (29 Oct)";
+    } if (T_Gya2 <= 2 && T_Gya2 > 0.98) {
+        timeEvent = "- Complex cells, Eukaryotes (9 Nov)";
+    } if (T_Gya2 <= 0.98 && T_Gya2 > 0.67) {
+        timeEvent = "- First multicellular life (5 Dec)";
+    } if (T_Gya2 <= 0.94 && T_Gya2 > 0.55) {
+        timeEvent = "- Simple animals (7 Dec)";
+    } if (T_Gya2 <= 0.55 && T_Gya2 > 0.5) {
+        timeEvent = "- Arthropods, ancestors of insects, arachnids (14 Dec)";
+    }
+
+
+
+            const outputContainer = document.getElementById("outputContainer");
+            outputContainer.textContent = `${indays.toFixed(2)} ${T_Gya.toFixed(2)} billion years ago ${timeEvent}`;
+        }
+    
+    </script>
+</body>
+</html>
