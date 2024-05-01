@@ -24,11 +24,15 @@
             padding: 10px 20px;
             border-radius: 5px;
             border: none;
-            background-color: #6a4c5c;
+            background-color: #b77453;
             color: white;
             font-family: 'Comfortaa', sans-serif;
             font-size: 16px;
             cursor: pointer;
+        }
+        button:hover{
+            background-color: #a0603f;
+
         }
         
         .input-container {
@@ -85,7 +89,7 @@
         h1 {
             font-size: 25px; 
             color: #843b62; 
-            margin-top: 50px; 
+            margin-top: 20px; 
         }        
         a {
             font-size: 14px; 
@@ -156,10 +160,10 @@
 
     <img src="CC.png" alt="Placeholder Image" id="bottomImage">
     <p2><a href="https://en.wikipedia.org/wiki/Cosmic_Calendar" target="_blank">Source: Wikipedia</a></p2>
+    <a>keep scrolling down for fun challenge! </a>
+    <a>Press the buttons in order of cosmic events!</a>
     <br>
-    <div class="quiz-container">
-        <div class="start-page" id="start-page">
-            <h>Challenge!</h>
+    <h1>Challenge!</h1>
             <!--img src="../images/BE3.PNG" width="400" alt="Egg Image"-->
             <div class="buttons-container">
                 <button id="button1" class="do-not-press-button">Sun</button>
@@ -172,12 +176,13 @@
                 <button id="button8" class="do-not-press-button">Milky Way</button>
                 <button id="button9" class="do-not-press-button">Birds</button>
             </div>
-        </div>
+        <br>
         <div id="image-container">
             <!--img src="../images/BE3.PNG" width="400" alt="Egg Image"-->
             <h1>Excellent! All correct!</h1>
         </div>
         <p id="error-message"></p>
+        <button id="reset-button" class="button">Reset </button>
         <br>
         <div>
 
@@ -279,7 +284,7 @@
 
     const buttons = document.querySelectorAll("button");
     const errorMessage = document.getElementById("error-message");
-
+    const resetButton = document.getElementById("reset-button");
 
     let userSequence = [];
 
@@ -303,12 +308,22 @@
             }
         }
 
-
         button.classList.add("button-pressed");
-
         button.disabled = true;
     });
 });
+
+            resetButton.addEventListener("click", function() {
+            // Reset user sequence and button states
+            userSequence = [];
+            buttons.forEach(button => {
+                button.classList.remove("button-pressed");
+                button.disabled = false;
+            });
+            errorMessage.textContent = "";
+            errorMessage.style.display = "none";
+            document.getElementById("image-container").style.display = "none";
+        });
 
 
     function arraysMatch(arr1, arr2) {
@@ -318,6 +333,11 @@
     }
     return true;
 }
+    
+    </script>
+</body>
+</html>
+
     
     </script>
 </body>
