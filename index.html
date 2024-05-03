@@ -17,7 +17,7 @@
             align-items: center;
             text-align: center;
             flex-direction: column;
-            height: 500;
+            height: 400;
         }
 
         button {
@@ -41,6 +41,7 @@
             align-items: center;
             margin-bottom: 20px;
             color: #843b62;
+            width:400;
         }
         
         .input-container label {
@@ -78,7 +79,7 @@
             color: #843b62;
             font-size: 18px;
             margin-top: 20px;
-            width: 80%;
+            width: 70%;
         }
 
         #bottomImage {
@@ -128,6 +129,9 @@
         }
 
         #error-message {
+            font-size: 25px; 
+            color: #c8267d; 
+            margin-top: 20px; 
             font-weight: bold;
             display: none; 
         }
@@ -200,7 +204,7 @@
             let december31 = new Date(2024, 11, 31); 
             let differenceInMs = december31 - inputDate;
             let indays = Math.ceil(differenceInMs / (1000 * 60 * 60 * 24));
-
+         
             //let indays = 0;
             //for (let month = birthMonth - 1; month < 12; month++) {
             //    if (month === birthMonth - 1) {
@@ -217,64 +221,64 @@
 
 
     if (T_Gya2 <= 13.8 && T_Gya2 > 13.12) {
-        timeEvent = "- Big Bang, the beginning of the Universe on 1 Jan, 14 minutes after midnight";
+        timeEvent = "Big Bang, the beginning of the Universe on 1 Jan, 14 minutes after midnight";
     } if (T_Gya2 <= 13.12 && T_Gya2 > 12.85) {
-        timeEvent = "- Oldest known Gamma Ray Burst (19 Jan)";
+        timeEvent = "Oldest known Gamma Ray Burst (19 Jan)";
         imageUrl = "1.png"
     } if (T_Gya2 <= 12.85 && T_Gya2 > 11) {
-        timeEvent = "- First galaxy formed (26 Jan)";
+        timeEvent = "First galaxy formed (26 Jan)";
     } if (T_Gya2 <= 11 && T_Gya2 > 8.81) {
-        timeEvent = "- Milky Way Galaxy formed (16 Mar)";
+        timeEvent = "Milky Way Galaxy formed (16 Mar)";
     } if (T_Gya2 <= 8.81 && T_Gya2 > 4.57) {
-        timeEvent = "- Milky Way Galaxy disk formed (13 May)";
+        timeEvent = "Milky Way Galaxy disk formed (13 May)";
     } if (T_Gya2 <= 4.57 && T_Gya2 > 4.42) {
-        timeEvent = "- Solar system formed (2 Sep)";
+        timeEvent = "Solar system formed (2 Sep)";
     } if (T_Gya2 <= 4.42 && T_Gya2 > 4.12) {
-        timeEvent = "- Oldest rocks known on Earth (6 Sep)";
+        timeEvent = "Oldest rocks known on Earth (6 Sep)";
     } if (T_Gya2 <= 4.12 && T_Gya2 > 3.86) {
-        timeEvent = "- First known remains of biotic life (14 Sep)";
+        timeEvent = "First known remains of biotic life (14 Sep)";
     } if (T_Gya2 <= 3.86 && T_Gya2 > 3.52) {
-        timeEvent = "- First Life, Prokaryotes (21 Sep)";
+        timeEvent = "First Life, Prokaryotes (21 Sep)";
     } if (T_Gya2 <= 3.52 && T_Gya2 > 2.42) {
-        timeEvent = "- Photosynthesis (30 Sep)";
+        timeEvent = "Photosynthesis (30 Sep)";
     } if (T_Gya2 <= 2.42 && T_Gya2 > 2) {
-        timeEvent = "- Oxygenation of atmosphere (29 Oct)";
+        timeEvent = "Oxygenation of atmosphere (29 Oct)";
     } if (T_Gya2 <= 2 && T_Gya2 > 0.98) {
-        timeEvent = "- Complex cells, Eukaryotes (9 Nov)";
+        timeEvent = "Complex cells, Eukaryotes (9 Nov)";
     } if (T_Gya2 <= 0.98 && T_Gya2 > 0.67) {
-        timeEvent = "- First multicellular life (5 Dec)";
+        timeEvent = "First multicellular life (5 Dec)";
     } if (T_Gya2 <= 0.94 && T_Gya2 > 0.55) {
-        timeEvent = "- Simple animals (7 Dec)";
+        timeEvent = "Simple animals (7 Dec)";
     } if (T_Gya2 <= 0.55 && T_Gya2 > 0.53) {
-        timeEvent = "- Arthropods, ancestors of insects, arachnids (14 Dec)";
+        timeEvent = "Arthropods, ancestors of insects, arachnids (14 Dec)";
     } if (T_Gya2 <= 0.53 && T_Gya2 > 0.45) {
-        timeEvent = "- Fish and Proto-amphibians (17 Dec)";
+        timeEvent = "Fish and Proto-amphibians (17 Dec)";
     } if (T_Gya2 <= 0.42 && T_Gya2 > 0.38) {
-        timeEvent = "- Land plants; Ordovician–Silurian extinction events (20 Dec)";
+        timeEvent = "Land plants; Ordovician–Silurian extinction events (20 Dec)";
     } if (T_Gya2 <= 0.38 && T_Gya2 > 0.34) {
-        timeEvent = "- Insects and seeds (21 Dec)";
+        timeEvent = "Insects and seeds (21 Dec)";
     } if (T_Gya2 <= 0.34 && T_Gya2 > 0.3) {
-        timeEvent = "- Amphibians; Late Devonian extinction (22 Dec)";
+        timeEvent = "Amphibians; Late Devonian extinction (22 Dec)";
     } if (T_Gya2 <= 0.3 && T_Gya2 > 0.26) {
-        timeEvent = "- Reptiles (23 Dec)";
+        timeEvent = "Reptiles (23 Dec)";
     } if (T_Gya2 <= 0.26 && T_Gya2 > 0.23) {
-        timeEvent = "- Permian–Triassic extinction event (24 Dec)";
+        timeEvent = "Permian–Triassic extinction event (24 Dec)";
     } if (T_Gya2 <= 0.23 && T_Gya2 > 0.2) {
-        timeEvent = "- Dinosaurs (25 Dec)";
+        timeEvent = "Dinosaurs (25 Dec)";
     } if (T_Gya2 <= 0.2 && T_Gya2 > 0.15) {
-        timeEvent = "- Mammals; Triassic–Jurassic extinction event (26 Dec)";
+        timeEvent = "Mammals; Triassic–Jurassic extinction event (26 Dec)";
     } if (T_Gya2 <= 0.15 && T_Gya2 > 0.13) {
-        timeEvent = "- Birds (avian dinosaurs) (27 Dec)";
+        timeEvent = "Birds (avian dinosaurs) (27 Dec)";
     } if (T_Gya2 <= 0.13 && T_Gya2 > 0.065) {
-        timeEvent = "- Flowers (28 Dec)";
+        timeEvent = "Flowers (28 Dec)";
     } if (T_Gya2 <= 0.065 && T_Gya2 > 0.04) {
-        timeEvent = "- Cretaceous–Paleogene extinction event, non-avian dinosaurs: gone (30 Dec)";
+        timeEvent = "Cretaceous–Paleogene extinction event, non-avian dinosaurs: gone (30 Dec)";
     } if (T_Gya2 <= 0.04 && T_Gya2 >= 0) {
-        timeEvent = "- Primates > Apes > Hominids > Primitive Humans > Stone Tools > FIRE > Modern Humans > Sculpture, Agriculture > End of Ice Age >>>> a lot more that heppens and then... TODAY! (31 Dec)";
+        timeEvent = "Primates > Apes > Hominids > Primitive Humans > Stone Tools > FIRE > Modern Humans > Sculture, Agriculture > End of Ice Age >>>> a lot more that heppens and then... TODAY! (31 Dec)";
     }
 
             const outputContainer = document.getElementById("outputContainer");
-            outputContainer.textContent = `${T_Gya.toFixed(2)} billion years ago ${timeEvent}`;
+            outputContainer.textContent = `${T_Gya.toFixed(2)} billion years ago. Nearest event = ${timeEvent}`;
             const bottomImage = document.getElementById("bottomImage");
             bottomImage.src = imageUrl;
             const calculateButton = document.querySelector("button");
@@ -316,7 +320,6 @@
 });
 
             resetButton.addEventListener("click", function() {
-            // Reset user sequence and button states
             userSequence = [];
             buttons.forEach(button => {
                 button.classList.remove("button-pressed");
